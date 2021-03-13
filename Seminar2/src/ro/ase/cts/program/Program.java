@@ -9,13 +9,13 @@ import ro.ase.cts.clase.Angajat;
 import ro.ase.cts.clase.Aplicant;
 
 public class Program {
-	public static List<Aplicant> citireAplicanti(String numeFisier,ReaderAplicant readerAplicant) throws FileNotFoundException{
-		return readerAplicant.readAplicanti(numeFisier);
+	public static List<Aplicant> citireAplicanti(ReaderAplicant readerAplicant) throws FileNotFoundException{
+		return readerAplicant.readAplicanti();
 	}
 	public static void main(String[] args) {
 		List<Aplicant> listaAplicant;
 		try {
-			listaAplicant = citireAplicanti("studenti.txt",new ReaderStudenti());
+			listaAplicant = citireAplicanti(new ReaderStudenti("studenti.txt"));
 			for(Aplicant aplicant:listaAplicant)
 				System.out.println(aplicant.toString());
 		} catch (FileNotFoundException e) {
