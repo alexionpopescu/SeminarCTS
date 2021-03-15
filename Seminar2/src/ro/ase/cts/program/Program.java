@@ -16,9 +16,11 @@ public class Program {
 		List<Aplicant> listaAplicant;
 		try {
 			listaAplicant = citireAplicanti(new ReaderStudenti("studenti.txt"));
-			for(Aplicant aplicant:listaAplicant)
+			for(Aplicant aplicant:listaAplicant) {
 				System.out.println(aplicant.toString());
-		} catch (FileNotFoundException e) {
+				System.out.print(aplicant.finantare());
+			}
+			} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

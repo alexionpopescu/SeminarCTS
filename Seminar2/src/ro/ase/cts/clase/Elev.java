@@ -9,8 +9,8 @@ public class Elev extends Aplicant{
 	public int getClasa() {
 		return clasa;
 	}
-	public void setClasa(int i) {
-		this.clasa = i;
+	public void setClasa(int index) {
+		this.clasa = index;
 	}
 	public String getTutore() {
 		return tutore;
@@ -40,10 +40,13 @@ public class Elev extends Aplicant{
 		this.tutore = tutore;
 	}
 	
-	public int finantare() {
-		int s=30;
-		System.out.println("Angajatul "+getNume()+" "+getPrenume()+" primeste"+s+" Euro/zi in proiect.");
-		return s;
+	public String finantare() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(super.finantare());
+		builder.append(Constante.SUMA_FINANTARE_ELEV);
+		builder.append(" Euro/zi in proiect.");	
+		System.out.println(builder.toString());
+		return builder.toString();
 	}
 	
 }

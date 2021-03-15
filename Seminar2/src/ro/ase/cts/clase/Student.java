@@ -39,12 +39,13 @@ public class Student extends Aplicant {
 		stringBuilder.append(", an_studii=").append(an_studii);
 		return stringBuilder.toString();
 	}
-	
-	
-	public int finantare() {
-		int s=20;
-		System.out.println("Studentul "+getNume()+" "+getPrenume()+" primeste"+s+" Euro/zi in proiect.");
-		return s;
+	public String finantare() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(super.finantare());
+		builder.append(Constante.SUMA_FINANTARE_STUDENT);
+		builder.append(" Euro/zi in proiect.");	
+		System.out.println(builder.toString());
+		return builder.toString();
 	}
 	
 }
