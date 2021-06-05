@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import ro.ase.cts.clase.Grupa;
+import ro.ase.cts.clase.Student;
 
 public class TesteConstructorGrupa {
 
